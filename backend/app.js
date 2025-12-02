@@ -25,7 +25,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send("API backend is Running...");
+  res.send("<h1>API backend is Running...</h1>");
 });
 
 export default app;
