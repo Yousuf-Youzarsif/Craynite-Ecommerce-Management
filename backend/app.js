@@ -2,7 +2,9 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
-
+import { errorMiddleware } from "./middleware/errorMiddleware.js";
+import createTables from "./utils/createTables.js";
+import authroute from "./routers/auth.route.js";
 const app = express();
 
 app.use(
@@ -27,5 +29,9 @@ app.use(
 app.get("/", (req, res) => {
   res.send("<h1>API backend is Running...</h1>");
 });
+app.use("/api/users", authroute);
+createTables();
+
+app.use(errorMiddleware);
 
 export default app;

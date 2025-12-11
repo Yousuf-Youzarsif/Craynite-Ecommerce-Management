@@ -1,7 +1,7 @@
 import app from "./app.js";
 import { v2 as cloudinary } from "cloudinary";
 import pool from "./config/database.js";
-import createTables from "./utils/createTables.js";
+
 const PORT = process.env.PORT;
 
 cloudinary.config({
@@ -36,6 +36,5 @@ async function server() {
     process.exit(1);
   }
 }
-createTables();
 
 server();
