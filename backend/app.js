@@ -29,7 +29,7 @@ app.use(
 app.get("/", (req, res) => {
   res.send("<h1>API backend is Running...</h1>");
 });
-app.use("/api/users", authroute);
+app.use("/api/v1/auth", authroute);
 createTables();
 
 app.use(errorMiddleware);
